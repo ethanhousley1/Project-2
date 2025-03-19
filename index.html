@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Welcome!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,23 +12,24 @@
     <script src="https://kit.fontawesome.com/48a2b0e4ef.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="w-full flex flex-col justify-center items-center">
-
-    <header id=top class="w-full position-relative">
+<body class="w-full grid place-items-center">
+    <!-- header image -->
+    <header id=top class="grid w-full position-relative">
         <div class="overflow-hidden rounded-3xl flex w-full h-96 justify-center items-center">
             <h1 id="overlay">Microneedling</h1>
             <img class="w-full h-full object-cover" src="img/EthanAnna-7.jpg" alt="">
         </div>
     </header>
-    <nav class="main-nav flex justify-center items-center">
-        <button class="p-1 bg-white w-1/5 nav-btn"><i class="fa-solid fa-house"></i> Home</button>
-        <button class="p-1 bg-white w-1/5 nav-btn"><i class="fa-solid fa-camera"></i> Serice Photo Library</button>
-        <button class="p-1 bg-white w-1/5 nav-btn"><i class="fa-solid fa-comment"></i> Social Media and More!</button>
+    <!-- nav bar -->
+    <nav class="main-nav">
+        <button class="nav-btn-1 p-1 bg-white w-1/2 nav-btn"><i class="fa-solid fa-house"></i> Home</button>
+        <button class="nav-btn-2 p-1 bg-white nav-btn"><i class="fa-solid fa-camera"></i> Serice Photos</button>
+        <button class="nav-btn-3 p-1 bg-white nav-btn"><i class="fa-solid fa-comment"></i> Social Media</button>
     </nav>
 
 <div class="container flex flex-col items-center justify-around">
     <h1>Anna's Skin and Spa</h1>
-    <div class="card-container flex flex-wrap justify-evenly w-full">
+    <div class="card-container grid w-full">
         <div class="card flex flex-col flex-wrap items-center">
             <h3>Nails</h3>
             <img src="./img/giorgio-trovato-gb6gtiTZKB8-unsplash.jpg" alt="">
@@ -54,9 +55,13 @@
     <h1>Follow on IG! : @annaskinandspa</h1>
     <!-- MAIN BODY -->
 </div>
+
+<!-- PRODUCT INFORMATION -->
 <section class="product-container">
-    <h1 class="text-4xl"><i class="fa-solid fa-star"></i> Learn About our Most Popular Service! <i class="fa-solid fa-star"></i></h1>
-    <div class="product-desc">
+    <!-- this will be an simple text animation, once I figure out the javascript -->
+    <h1 class="text-4xl tracking-in-contract-bck"><i class="fa-solid fa-star"></i> Learn About our Most Popular Service! <i class="fa-solid fa-star"></i></h1>
+    <!-- this also has an animation -->
+    <div class="product-desc slide-in-left">
         <img class='overflow-hidden rounded-2xl'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMPdjyvtfIDJYe2SpPWk4Zf4XM1DTCrrV0AQ&s" alt="">
         <div class="product-info">
             <h2 class="text-xl font-bold self-center">What is microneedling?</h2>
@@ -116,9 +121,9 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="flex flex-wrap flex-col">
+<footer class="grid grid-cols-2">
     <h2 class="text-2xl self-center">Reach out to us!</h2>
-    <form class="flex flex-col w-1/4 m-4" action="">
+    <form class="grid auto-grid-cols w-1/4 m-4" action="">
         <!-- I used chatGPT for the following labels, I just wanted to make sure I was creating the form correctly, and that I was doing datetime correctly. -->
         <label for="name">Name:</label>
         <input type="text" class="text-black">
@@ -135,18 +140,19 @@
         <button class="rounded-2xl m-4">Submit</button>
 
     </form>
-
-    <h2>Thank you for visiting my website!</h2>
-    <p>@annaskinandspa</p>
-    <div class="dropdown">
-        <span id="services" class="rounded-2xl p-1">Hover for Services!</span>
-        <span class="dropdown-content">
-            <p>Facial</p>
-            <p>Microneedling</p>
-            <p>Waxing</p>
-        </span>
+    <div class="thank-you">
+        <h2>Thank you for visiting my website!</h2>
+        <p>@annaskinandspa</p>
+        <div class="dropdown">
+            <span id="services" class="rounded-2xl p-1">Hover for Services!</span>
+            <span class="dropdown-content">
+                <p>Facial</p>
+                <p>Microneedling</p>
+                <p>Waxing</p>
+            </span>
+        </div>
+        <a class="self-end" href="#top">Back to Top</a>
     </div>
-    <a class="self-end" href="#top">Back to Top</a>
 </footer>
 
 </body>
