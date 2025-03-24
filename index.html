@@ -15,14 +15,31 @@
 <body class="w-full grid place-items-center">
     <!-- header image -->
     <header id=top class="grid w-full position-relative">
-        <div class="overflow-hidden rounded-3xl flex w-full h-96 justify-center items-center">
-            <h1 id="overlay">Microneedling</h1>
+        <div class="overflow-hidden rounded-3xl flex w-full h-96 justify-center">
+            <div id="overlay">
+                <!-- microneedling animation -->
+                <div id="M">M</div><div id="I">i</div><div id="C">c</div><div id="R">r</div><div id="O">o</div><div id="N">n</div><div id="E">e</div><div id="E2">e</div><div id="D">d</div><div id="L">l</div><div id="I2">i</div><div id="N2">n</div><div id="G">g</div>
+            </div>
             <img class="w-full h-full object-cover" src="img/EthanAnna-7.jpg" alt="">
         </div>
     </header>
     <!-- nav bar -->
+    <!-- this is the hamburger nav bar for mobile  -->
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+        <i class="fa-solid fa-bars text-xl self-center"></i>
+        </label>
+    
+        <ul class="menu__box">
+          <li><a class="menu__item" href="#">Главная</a></li>
+                <li><a class="menu__item" href="#">Home</a></li>
+                <li><a class="menu__item" href="#">Service Photos</a></li>
+                <li><a class="menu__item" href="#">Social Media</a></li>
+        </ul>
+      </div>
     <nav class="main-nav">
-        <button class="nav-btn-1 p-1 bg-white w-1/2 nav-btn"><i class="fa-solid fa-house"></i> Home</button>
+        <button class="nav-btn-1 p-1 bg-white nav-btn"><i class="fa-solid fa-house"></i> Home</button>
         <button class="nav-btn-2 p-1 bg-white nav-btn"><i class="fa-solid fa-camera"></i> Serice Photos</button>
         <button class="nav-btn-3 p-1 bg-white nav-btn"><i class="fa-solid fa-comment"></i> Social Media</button>
     </nav>
@@ -57,7 +74,7 @@
 </div>
 
 <!-- PRODUCT INFORMATION -->
-<section class="product-container">
+<section class="product-container grid auto-grid-rows grid-cols-1">
     <!-- this will be an simple text animation, once I figure out the javascript -->
     <h1 class="text-4xl tracking-in-contract-bck"><i class="fa-solid fa-star"></i> Learn About our Most Popular Service! <i class="fa-solid fa-star"></i></h1>
     <!-- this also has an animation -->
@@ -70,7 +87,7 @@
             </p>
         </div>
     </div>
-    <div class="product-desc">
+    <div class="product-desc" id="product-desc-right">
         <div class="product-info">
             <h2 class="text-xl font-bold self-center">Why do I need microneedling?</h2>
             <p>
@@ -89,7 +106,7 @@
         </div>
     </div>
 </section>
-<article class="service">
+<article class="service grid auto-grid-rows justify-items-center">
     <!-- this code I learned from the UTD presentation on videos -->
     <video class="rounded-lg h-96" autoplay muted loop>
         <source src="video/5937412-uhd_2160_3840_24fps.mp4" type="video/mp4">
@@ -116,14 +133,15 @@
 
 <section id="divider" class="w-full">
     <div class="divider-container w-full h-48">
+        <!-- i used object-fit here in tailwind -->
         <img class="object-cover w-full h-full" src="img/wave-haikei (1).svg" alt="" id="svg-background">
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="grid grid-cols-2">
+<footer class="grid place-items-center">
     <h2 class="text-2xl self-center">Reach out to us!</h2>
-    <form class="grid auto-grid-cols w-1/4 m-4" action="">
+    <form class="grid auto-grid-cols" action="">
         <!-- I used chatGPT for the following labels, I just wanted to make sure I was creating the form correctly, and that I was doing datetime correctly. -->
         <label for="name">Name:</label>
         <input type="text" class="text-black">
@@ -140,7 +158,7 @@
         <button class="rounded-2xl m-4">Submit</button>
 
     </form>
-    <div class="thank-you">
+    <div class="thank-you flex flex-col gap-5">
         <h2>Thank you for visiting my website!</h2>
         <p>@annaskinandspa</p>
         <div class="dropdown">
@@ -151,8 +169,8 @@
                 <p>Waxing</p>
             </span>
         </div>
-        <a class="self-end" href="#top">Back to Top</a>
     </div>
+    <a class="self-end self-center" id='top' href="#top">Back to Top</a>
 </footer>
 
 </body>

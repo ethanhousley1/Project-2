@@ -13,6 +13,11 @@ body {
     font-family: 'Atkinson Hyperlegible Next', sans-serif;
     font-size: 1.04rem;
     background-color: var(--primary-color);
+    /* i used gap here to effectively and easily make a gap between all my elements on the body, i really like using grid on the body because everything was easy to format */
+    gap: 7px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    height: 100%;
 }
 
 .border-highlight {
@@ -27,50 +32,193 @@ body {
     font-style: italic;
 }
 
-nav {
-    width: auto;
-    z-index: 1;
+header div div {
+    display: inline-block;
 }
-nav .nav-btn {
-    border-radius: 20px;
-    transition: all 0.3s ease;
+
+/* yes, this animation took a while to make but not as long as I thought it would */
+
+#M {
+	animation: bounce-top 3s both infinite;
+}
+
+#I {
+    animation: bounce-top 3s both infinite calc(0.2s * 1)
+}
+
+#C {
+    animation: bounce-top 3s both infinite calc(0.2s * 2)
+}
+#R {
+    animation: bounce-top 3s both infinite calc(0.2s * 3)
+}
+#O {
+    animation: bounce-top 3s both infinite calc(0.2s * 4)
+}
+#N {
+    animation: bounce-top 3s both infinite calc(0.2s * 5)
+}
+#E {
+    animation: bounce-top 3s both infinite calc(0.2s * 6)
+}
+#E2 {
+    animation: bounce-top 3s both infinite calc(0.2s * 7)
+}
+#D {
+    animation: bounce-top 3s both infinite calc(0.2s * 8)
+}
+#L {
+    animation: bounce-top 3s both infinite calc(0.2s * 9)
+}
+#I2 {
+    animation: bounce-top 3s both infinite calc(0.2s * 10)
+}
+#N2 {
+    animation: bounce-top 3s both infinite calc(0.2s * 11)
+}
+#G {
+    animation: bounce-top 3s both infinite calc(0.2s * 12)
+}
+
+@keyframes bounce-top {
+    0% {
+        transform: translateY(0px)
+    }
+    50% {
+        transform: translateY(0px)
+    }
+    75% {
+        transform: translateY(0px)
+    }
+
+    85% {
+        transform: translateY(-16px)
+    }
+    90% {
+        transform: translateY(-16px);
+    }
 
 }
-.nav-btn:hover {
-    box-shadow: 0px 2px 6px 
-}
+  
 
 .main-nav {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    place-content: center;
-    place-items: center;
-    width: 100%;
-    position: sticky;
-    margin: 0.5rem;
-    top: 0;
-    background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    gap: 5px;
+    visibility: hidden;
 }
 
-@media (min-width: 700px) {
+#menu__toggle {
+    opacity: 0;
+    display:none;
+}
+
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+}
+  
+.menu__btn {
+    box-sizing: border-box;
+    border-radius:  15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 20px;
+    margin: 10px;
+    width: 3rem;
+    height: 25px;
+  
+    cursor: pointer;
+    z-index: 8000;
+    background-color: var(--secondary-color);
+}
+  
+
+  
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    z-index: 600;
+  
+    width: 300px;
+    height: 100%;
+  
+    margin: 0;
+    padding: 80px 0;
+  
+    list-style: none;
+  
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  
+    transition-duration: .25s;
+}
+  
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+  
+    color: #333;
+  
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  
+    text-decoration: none;
+  
+    transition-duration: .25s;
+}
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
+@media (min-width:700px) {
     .main-nav {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+        visibility: visible;
+        width: auto;
+        z-index: 1;
+    }
+    .main-nav .nav-btn {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+
+    }
+
+    .nav-btn:hover {
+        box-shadow: 0px 2px 6px 
     }
     .nav-btn-1 {
-        justify-self: end;
+        place-self: flex-end;
     }
     .nav-btn-2 {
-        justify-self: center;
+        place-self: center;
     }
+
     .nav-btn-3 {
-        justify-self: start;
+        place-self: flex-start;
     }
-    
+    .main-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        place-content: center;
+        place-items: center;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        gap: 4rem;
+
+    }
+    .menu__btn {
+        visibility: hidden;
+    }
 }
 
 /* this part is technically desktop-first */
@@ -118,22 +266,6 @@ nav .nav-btn {
     box-shadow: 1px 1px 3px;
 }
 
-@media (max-width: 1068px) {
-    .card-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-    .card {
-            width: 100%;;
-        }
-    .card:hover {
-            transform: none;
-        }
-    .container {
-        width: 100%;
-        height: auto;
-    }
-}
 
 .card img {
     width: 100%;;
@@ -158,13 +290,35 @@ nav .nav-btn {
 }
 
 .card p {
-    marcenter;gin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 nav button:hover {
     background-color: #EBC8CB90;
 }
 
+@media (max-width: 1068px) {
+    .card-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .card {
+            width: 100%;
+            transition: none;
+        }
+    .card:hover {
+            width: 100%;
+            box-shadow: 1px 1px 3px;
+    }
+    .container {
+        width: 100%;
+        height: auto;
+    }
+    .button {
+        display: block;
+        place-self: center;
+    }
+}
 /* MAIN BODY (CONTAINS THE PRODUCT) */
 
 .tracking-in-contract-bck {
@@ -258,20 +412,17 @@ nav button:hover {
 }
 
 .product-container {
+    place-items: center;
     width: 100%;
-    height: 1200px;
+    height: auto;
     background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
 }
 .product-desc {
     box-sizing:content-box;
-    display:flex;
-    width: 95%;
+    place-items: center;
+    display:grid;
     background-color: var(--accent-color-1);
-    max-height: 30%;
     margin: 10px;
     border-radius: 15px;
     transition: all 0.3s ease;
@@ -295,16 +446,22 @@ nav button:hover {
     padding: 10px;
 }
 
+@media (min-width: 700px) {
+    .product-container {
+        gap: 10px;
+    }
+    .product-desc {
+        grid-template-columns: 1fr 3fr;
+        height: 100%;
+    }
+    #product-desc-right {
+        grid-template-columns: 3fr 1fr;
+    }
 
-.service {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    
 }
 
 .service-info {
-    width: 60%;
+    width: 57%;
     background-color: var(--secondary-color);
     display: flex;
     flex-flow: column wrap;
@@ -324,34 +481,58 @@ nav button:hover {
     font-weight: bold;
 }
 
+
+@media (min-width: 700px) {
+    .service {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        justify-content: center;
+    }
+    .service video {
+        place-self: end;
+    }
+    .service-info {
+        place-self: start;
+        height: 24rem;
+    }
+}
+#divider {
+    position: relative;
+    top: 5rem;
+}
 #divider img {
     object-position : 50% 33%;
+    
 }
 
 /* FOOTER */
-
+/* this contains the auto filling grid  */
 footer {
     position: relative;
-    top: 2rem;
+    top: 4rem;
     background-color: black;
-    height: calc(130% + 3rem);
     width: 100%;
     color: white;
     justify-content: space-around;
-    padding: 20px
+    padding: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    /* border: 1px solid red; */
 }
 
-footer h1 {
-    grid-column: 1/2;
-}
 footer form {
-    grid-column: 2/3;
+    justify-self: center;
+    align-self: flex-start;
 }
+
+
 footer #services {
     background-color: var(--accent-color-1);
 
 }
 
+footer input {
+    width: 100%; 
+}
 
 footer button:hover {
     background-color: var(--accent-color-1);
@@ -368,10 +549,10 @@ footer button:hover {
     color: black;
     display: none;
     position: absolute;
+    margin: 0;
     background-color: var(--secondary-color);
     min-width: 150px;
-    box-shadow: 0px 8px 16px 0px;
-    padding: 12px 16px;
+    box-shadow: 0px 8px 16px 0px;;
     z-index: 1;
 
 }
@@ -379,26 +560,32 @@ footer button:hover {
     display: block;
 }
 
+footer #top {
+    justify-self: flex-end;
+}
+
+
 .thank-you {
-    grid-column: 1/3;
-    justify-self: center;
+    position: relative;
 }
 
 @media (min-width: 700px) {
     footer {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+        height: auto;
+        grid-template-columns: repeat(auto, minmax(30%, 1fr));
+        grid-auto-rows: auto;
+    }
+    footer #top {
+        grid-column: span 3;
     }
     
-    .thank-you {
-        grid-column: 3/4;
+
+}
+/* remember to test at school */
+/* this is using the UTD presentation on dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        color: white;
     }
-    footer h1 {
-        grid-column: 1/2;
-    }
-    footer form {
-        grid-column: 2/3;
-    }
-    
-    
 }
