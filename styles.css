@@ -498,23 +498,21 @@ nav button:hover {
 }
 #divider {
     position: relative;
-    top: 5rem;
+    top: 2rem;
 }
 #divider img {
-    object-position : 50% 33%;
-    
+    object-position : 50% 36%;
 }
 
 /* FOOTER */
 /* this contains the auto filling grid  */
 footer {
     position: relative;
-    top: 4rem;
+    top: 1rem;;
     background-color: black;
     width: 100%;
     color: white;
     justify-content: space-around;
-    padding: 10px;
     grid-auto-rows: minmax(100px, auto);
     /* border: 1px solid red; */
 }
