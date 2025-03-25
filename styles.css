@@ -584,8 +584,13 @@ footer #top {
 /* remember to test at school */
 /* this is using the UTD presentation on dark mode */
 @media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: black;
+        --secondary-color: rgb(91, 70, 26);
+        --accent-color-1: #86A788;
+        --accent-color-2: #FFCFCF;
+    }
     body {
-        background-color: black;
         color: white;
     }
 }
