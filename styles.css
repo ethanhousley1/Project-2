@@ -591,4 +591,14 @@ footer #top {
     body {
         color: white;
     }
+    .card-container {
+        background-color: var(--accent-color-1);
+    }
+    .main-nav {
+        background-color: var(--secondary-color);
+        color: white;
+    }
+    #divider {
+        background-color: var(--secondary-color)
+    }
 }
