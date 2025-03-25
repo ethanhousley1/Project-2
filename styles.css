@@ -594,11 +594,25 @@ footer #top {
     .card-container {
         background-color: var(--accent-color-1);
     }
+    .container{
+        background-color: var(--accent-color-1);
+    }
     .main-nav {
+        background-color: var(--secondary-color);
+        color: black;
+    
+    }
+    .main-nav .nav-btn {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background-color: white;
+
+    }
+    .nav-btn:hover {
         background-color: var(--secondary-color);
         color: white;
     }
     #divider {
-        background-color: var(--secondary-color)
+        visibility: hidden;
     }
 }
