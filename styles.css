@@ -6,6 +6,7 @@
     /* https://colorhunt.co/palette/86a788fffdecffe2e2ffcfcf */
 }
 html {
+    /* smooth scrolling is implemented here */
     scroll-behavior: smooth;
 }
 
@@ -581,6 +582,7 @@ footer #top {
 }
 /* remember to test at school */
 /* this is using the UTD presentation on dark mode */
+/* dark mode is toggled by system or browser settings */
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-color: black;

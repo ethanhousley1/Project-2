@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Welcome!</title>
+    <title>Welcome to my website!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,12 +37,13 @@
                 <li><a class="menu__item" href="#">Social Media</a></li>
         </ul>
       </div>
+    <!-- this nav bar is only seen on big screens, it is sticky -->
     <nav class="main-nav">
         <button class="nav-btn-1 p-1 bg-white nav-btn"><i class="fa-solid fa-house"></i> Home</button>
         <button class="nav-btn-2 p-1 bg-white nav-btn"><i class="fa-solid fa-camera"></i> Serice Photos</button>
         <button class="nav-btn-3 p-1 bg-white nav-btn"><i class="fa-solid fa-comment"></i> Social Media</button>
     </nav>
-
+<!-- this reorganizes at different breakpoints -->
 <div class="container flex flex-col items-center justify-around">
     <h1>Anna's Skin and Spa</h1>
     <div class="card-container grid w-full">
@@ -138,6 +139,8 @@
 </section>
 
 <!-- FOOTER -->
+ <!-- footer contains auto grid layouts, check css for more info -->
+  <!-- the footer reorganizes at different breakpoints -->
 <footer class="grid place-items-center">
     <h2 class="text-2xl self-center">Reach out to us!</h2>
     <form class="grid auto-grid-cols" action="">
